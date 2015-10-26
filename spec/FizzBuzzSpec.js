@@ -35,13 +35,10 @@ describe("FizzBuzz", function() {
 
 describe("FizzBuzz initialized with custom substitutions", function() {
     var fizzBuzz;
-    var substitutions = [{
-        number: 2,
-        word: 'fuzz'
-    }, {
-        number: 3,
-        word: 'bizz'
-    }];
+    var substitutions = [
+    	{number: 2, word: 'fuzz'},
+    	{number: 3, word: 'bizz'}
+    ];
 
     beforeEach(function() {
         fizzBuzz = new FizzBuzz(substitutions);

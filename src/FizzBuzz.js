@@ -1,14 +1,8 @@
-var defaultSubstitutions =
-    [{
-        number: 3,
-        word: 'fizz'
-    }, {
-        number: 5,
-        word: 'buzz'
-    }, {
-        number: 7,
-        word: 'pop'
-    }];
+var defaultSubstitutions = [
+    {number: 3, word: 'fizz'},
+    {number: 5, word: 'buzz'},
+    {number: 7, word: 'pop' }
+];
 
 function FizzBuzz(substitutions) {
     this.substitutions = substitutions || defaultSubstitutions;
