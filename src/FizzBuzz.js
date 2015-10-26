@@ -1,25 +1,34 @@
-function FizzBuzz() {}
+var defaultSubstitutions =
+    [{
+        number: 3,
+        word: 'fizz'
+    }, {
+        number: 5,
+        word: 'buzz'
+    }, {
+        number: 7,
+        word: 'pop'
+    }];
+
+function FizzBuzz(substitutions) {
+    this.substitutions = substitutions || defaultSubstitutions;
+}
 
 FizzBuzz.prototype.getResult = function(num) {
+    var filtered = this.substitutions.filter(function(subst) {
+        return checkIfDivisible(num, subst.number);
+    });
+
     var result = '';
-    result = result + getFizz(num) + getBuzz(num) + getPop(num);
+    filtered.forEach(function(subst) {
+        result += subst.word + " ";
+    });
 
     return result.trim();
 };
 
-function getFizz(num) {
-    if (num % 3 === 0) return "fizz ";
-    return '';
-}
-
-function getBuzz(num) {
-    if (num % 5 === 0) return "buzz ";
-    return '';
-}
-
-function getPop(num) {
-    if (num % 7 === 0) return "pop ";
-    return '';
+function checkIfDivisible(num1, num2) {
+    return num1 % num2 === 0;
 }
 
 module.exports = FizzBuzz;

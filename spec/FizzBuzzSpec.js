@@ -32,3 +32,33 @@ describe("FizzBuzz", function() {
         expect(result).toEqual("fizz buzz pop");
     });
 });
+
+describe("FizzBuzz initialized with custom substitutions", function() {
+    var fizzBuzz;
+    var substitutions = [{
+        number: 2,
+        word: 'fuzz'
+    }, {
+        number: 3,
+        word: 'bizz'
+    }];
+
+    beforeEach(function() {
+        fizzBuzz = new FizzBuzz(substitutions);
+    });
+
+    it("Should return 'fuzz' for mupltiple of 2", function() {
+        var result = fizzBuzz.getResult(4);
+        expect(result).toEqual("fuzz");
+    });
+
+    it("Should return 'bizz' for multiples of 3", function() {
+        var result = fizzBuzz.getResult(9);
+        expect(result).toEqual("bizz");
+    });
+
+    it("Should return 'fuzz bizz' for mupltiple of 2 and 3", function() {
+        var result = fizzBuzz.getResult(6);
+        expect(result).toEqual("fuzz bizz");
+    });
+});
