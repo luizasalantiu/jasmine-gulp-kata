@@ -1,5 +1,5 @@
 # jasmine-gulp-kata
-[FizzBuzz kata]((http://agilekatas.co.uk/katas/FizzBuzz-Kata) tested with Jasmine.
+[FizzBuzz kata](http://agilekatas.co.uk/katas/FizzBuzz-Kata) tested with Jasmine.
 
 Uses:
 
